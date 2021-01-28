@@ -18,6 +18,8 @@ public class MainController {
     @PostMapping("/parse")
     public void parse(@RequestParam("file") MultipartFile file) {
         fileParsingManager.parse(file);
+
+
     }
 
 }
