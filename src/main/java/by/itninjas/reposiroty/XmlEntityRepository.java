@@ -1,6 +1,6 @@
 package by.itninjas.reposiroty;
 
-import by.itninjas.jaxb.XmlEntity;
+import by.itninjas.entity.XmlEntity;
 import java.util.ArrayList;
 import org.springframework.stereotype.Repository;
 

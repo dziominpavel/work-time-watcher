@@ -1,7 +1,11 @@
 package by.itninjas.converter;
 
-import by.itninjas.jaxb.XmlEntity;
+import by.itninjas.entity.R;
+import by.itninjas.entity.XmlEntity;
 import java.io.StringReader;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Unmarshaller;
 import org.springframework.stereotype.Component;
@@ -32,8 +36,9 @@ public class XmlReader {
             JAXBContext jaxbContext = JAXBContext.newInstance(XmlEntity.class);
             Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
             StringReader reader = new StringReader(correctXml);
+            XmlEntity entity = (XmlEntity) unmarshaller.unmarshal(reader);
 
-            return (XmlEntity) unmarshaller.unmarshal(reader);
+            return entity;
 
         } catch (Exception e) {
             e.printStackTrace();

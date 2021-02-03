@@ -1,4 +1,4 @@
-package by.itninjas.jaxb;
+package by.itninjas.entity;
 
 import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessType;

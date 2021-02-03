@@ -1,6 +1,7 @@
-package by.itninjas.jaxb;
+package by.itninjas.entity;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -12,13 +13,13 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class XmlEntity {
 
     @XmlElement
-    private ArrayList<R> R = new ArrayList<>();
+    private List<R> R = new ArrayList<>();
 
-    public ArrayList<R> getR() {
+    public List<R> getR() {
         return R;
     }
 
-    public void setR(ArrayList<R> r) {
+    public void setR(List<R> r) {
         R = r;
     }
 

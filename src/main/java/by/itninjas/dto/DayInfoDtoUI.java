@@ -13,13 +13,13 @@ public class DayInfoDtoUI {
 
     private String date;
 
-    private String needTimeToWork;
+//    private String needTimeToWork;
 
-    private String factTime;
+//    private String factTime;
 
-    private String firstEnter;
+//    private String firstEnter;
 
-    private String lastExit;
+//    private String lastExit;
 
     private InOutInfoDtoUI inOutInfoDtoUI;
 }

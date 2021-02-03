@@ -12,4 +12,7 @@ public class InOutInfoDtoUI {
     private InOutType inOutType;
 
     private String time;
+
+    private String address;
+
 }

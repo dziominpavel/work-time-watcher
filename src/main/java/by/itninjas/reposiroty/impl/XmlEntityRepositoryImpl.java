@@ -1,7 +1,7 @@
 package by.itninjas.reposiroty.impl;
 
 import by.itninjas.reposiroty.XmlEntityRepository;
-import by.itninjas.jaxb.XmlEntity;
+import by.itninjas.entity.XmlEntity;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;

@@ -4,9 +4,15 @@ import by.itninjas.converter.EntityToDtoConverter;
 import by.itninjas.converter.XmlReader;
 import by.itninjas.converter.XmlToEntityConverter;
 import by.itninjas.dto.MainDtoUI;
-import by.itninjas.jaxb.XmlEntity;
+import by.itninjas.dto.UserDtoUI;
+import by.itninjas.entity.R;
+import by.itninjas.entity.User;
+import by.itninjas.entity.XmlEntity;
 import by.itninjas.reposiroty.XmlEntityRepository;
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
@@ -28,8 +34,7 @@ public class FileParsingManager {
     private XmlEntityRepository localRepository;
 
 
-    public ArrayList<MainDtoUI> getFileInfo(MultipartFile[] files) {
-        ArrayList<MainDtoUI> dtoList = new ArrayList<>();
+    public MainDtoUI getFileInfo(MultipartFile[] files) {
 
         for (MultipartFile file : files) {
             XmlEntity xmlEntity = xmlReader.parse(file);
@@ -37,20 +42,22 @@ public class FileParsingManager {
         }
 
         ArrayList<XmlEntity> allEntity = localRepository.getAll();
-//        Map<Map<String, List<R>>, List<XmlEntity>> collected = allEntity.stream()
-//            .collect(groupingBy(entity -> entity.getR().stream()
-//                .collect(groupingBy(name -> name.getC0()))));
 
+        ArrayList<User> userList = new ArrayList<>();
         for (XmlEntity xmlEntity : allEntity) {
-            xmlToEntityConverter.convert(xmlEntity);
+            User user = xmlToEntityConverter.convert(xmlEntity);
+            userList.add(user);
         }
 
-        for (XmlEntity xmlEntity : allEntity) {
-
-            dtoList.add();
+        ArrayList<UserDtoUI> dtoList = new ArrayList<>();
+        for (User user : userList) {
+            UserDtoUI dto = entityToDtoConverter.convert(user);
+            dtoList.add(dto);
         }
 
-        return dtoList;
+        MainDtoUI mainDtoUI = new MainDtoUI();
+        mainDtoUI.setUserDtoUIList(dtoList);
 
+        return mainDtoUI;
     }
 }
