@@ -6,9 +6,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name = "R")
-@XmlAccessorType(XmlAccessType.PROPERTY)
-public class R {
+//@XmlRootElement(name = "R")
+//@XmlAccessorType(XmlAccessType.PROPERTY)
+public class Item {
 
     @XmlElement
     private String C0;
@@ -75,11 +75,11 @@ public class R {
         if (this == o) {
             return true;
         }
-        if (!(o instanceof R)) {
+        if (!(o instanceof Item)) {
             return false;
         }
-        R r = (R) o;
-        return C0.equals(r.C0) && C1.equals(r.C1) && C2.equals(r.C2) && C3.equals(r.C3) && C4.equals(r.C4);
+        Item item = (Item) o;
+        return C0.equals(item.C0) && C1.equals(item.C1) && C2.equals(item.C2) && C3.equals(item.C3) && C4.equals(item.C4);
     }
 
     @Override

@@ -1,4 +1,4 @@
-package by.itninjas.dto;
+package by.itninjas.entity.enums;
 
 import java.util.Arrays;
 import java.util.HashMap;

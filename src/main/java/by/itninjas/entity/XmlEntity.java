@@ -9,18 +9,18 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "RS")
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.FIELD)
 public class XmlEntity {
 
-    @XmlElement
-    private List<R> R = new ArrayList<>();
+    @XmlElement(name = "R")
+    private List<Item> items = new ArrayList<>();
 
-    public List<R> getR() {
-        return R;
+    public List<Item> getItems() {
+        return items;
     }
 
-    public void setR(List<R> r) {
-        R = r;
+    public void setItems(List<Item> items) {
+        this.items = items;
     }
 
     @Override
@@ -32,11 +32,11 @@ public class XmlEntity {
             return false;
         }
         XmlEntity xmlEntity = (XmlEntity) o;
-        return R.equals(xmlEntity.R);
+        return items.equals(xmlEntity.items);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(R);
+        return Objects.hash(items);
     }
 }

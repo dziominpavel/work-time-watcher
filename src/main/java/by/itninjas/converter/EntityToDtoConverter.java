@@ -1,43 +1,48 @@
 package by.itninjas.converter;
 
-import by.itninjas.dto.DayInfoDtoUI;
-import by.itninjas.dto.InOutInfoDtoUI;
-import by.itninjas.dto.InOutType;
-import by.itninjas.dto.UserDtoUI;
-import by.itninjas.entity.R;
-import by.itninjas.entity.User;
-import java.util.ArrayList;
+import by.itninjas.dto.ui.DayLogDto;
+import by.itninjas.dto.ui.InOutDayLogDto;
+import by.itninjas.dto.ui.UserDto;
+import by.itninjas.entity.Item;
+import by.itninjas.entity.XmlEntity;
+import by.itninjas.entity.enums.InOutType;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
 import org.springframework.stereotype.Component;
 
 @Component
 public class EntityToDtoConverter {
 
-    public UserDtoUI convert(User user) {
+    public UserDto convert(XmlEntity xmlEntity) {
 
-        UserDtoUI userDtoUI = new UserDtoUI();
-        userDtoUI.setName(user.getName());
+        UserDto userDto = new UserDto();
+        List<Item> items = xmlEntity.getItems();
+        userDto.setName(items.get(0).getC0());
 
-        Map<String, List<R>> userDayInformation = user.getUserDayInformation();
-        Set<String> dates = userDayInformation.keySet();
+        for (Item item : items) {
 
-        for (String date : dates) {
-            List<DayInfoDtoUI> dayInfoDtoUIList = new ArrayList<>();
-            for (R r : userDayInformation.get(date)) {
-                DayInfoDtoUI dayInfoDtoUI = new DayInfoDtoUI();
-                InOutInfoDtoUI inOutInfoDto = new InOutInfoDtoUI();
-                inOutInfoDto.setTime(r.getC2());
-                inOutInfoDto.setInOutType(InOutType.getByValue(r.getC3()));
-                inOutInfoDto.setAddress(r.getC4());
-                dayInfoDtoUI.setInOutInfoDtoUI(inOutInfoDto);
-                dayInfoDtoUIList.add(dayInfoDtoUI);
-            }
-            userDtoUI.addDayInfo(date, dayInfoDtoUIList);
+            DayLogDto dayLogDto = new DayLogDto();
+
+            InOutDayLogDto inOutDayLogDto = new InOutDayLogDto();
+            inOutDayLogDto.setType(InOutType.getByValue(item.getC3()));
+            String dateTime = item.getC2();
+            LocalDateTime localDateTime = LocalDateTime.parse(dateTime, DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss"));
+            inOutDayLogDto.setDatetime(localDateTime);
+            inOutDayLogDto.setAddress(item.getC4());
+
+            dayLogDto.getInOutDayLogs().add(inOutDayLogDto);
+
+            String date = item.getC1();
+            LocalDate localDate = LocalDate.parse(date, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+            dayLogDto.setDate(localDate);
+
+            userDto.getDayLogs().add(dayLogDto);
+
         }
 
-        return userDtoUI;
+        return userDto;
     }
 
 }
