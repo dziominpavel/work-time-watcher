@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RS xmlns="urn:schemas-microsoft-com:xml-analysis:rowset">
+	<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:saw-sql="urn:saw-sql" targetNamespace="urn:schemas-microsoft-com:xml-analysis:rowset">
+		<xsd:complexType name="R">
+			<xsd:sequence>
+				<xsd:element name="C0" type="xsd:string" minOccurs="1" maxOccurs="1" saw-sql:type="varchar" saw-sql:sqlFormula="&quot;CMK3&quot;.&quot;ФЛ&quot;.&quot;ФИО HTML&quot;" saw-sql:displayFormula="&quot;ФЛ&quot;.&quot;ФИО HTML&quot;" saw-sql:aggregationRule="none" saw-sql:aggregationType="nonAgg" saw-sql:tableHeading="ФЛ" saw-sql:columnHeading="ФИО" saw-sql:isDoubleColumn="false" saw-sql:columnID="c654d716a025dc0da" saw-sql:length="229" saw-sql:scale="0"/>
+				<xsd:element name="C1" type="xsd:date" minOccurs="1" maxOccurs="1" saw-sql:type="date" saw-sql:sqlFormula="&quot;CMK3&quot;.&quot;Календарь&quot;.&quot;Дата календаря&quot;" saw-sql:displayFormula="&quot;Календарь&quot;.&quot;Дата календаря&quot;" saw-sql:aggregationRule="none" saw-sql:aggregationType="nonAgg" saw-sql:tableHeading="Календарь" saw-sql:columnHeading=" Дата календаря" saw-sql:isDoubleColumn="false" saw-sql:columnID="c8747b97101b07777" saw-sql:length="6" saw-sql:scale="0"/>
+				<xsd:element name="C2" type="xsd:dateTime" minOccurs="1" maxOccurs="1" saw-sql:type="timestamp" saw-sql:sqlFormula="&quot;CMK3&quot;.&quot;Enter-проходы&quot;.&quot;Дата и время прохода&quot;" saw-sql:displayFormula="&quot;Enter-проходы&quot;.&quot;Дата и время прохода&quot;" saw-sql:aggregationRule="none" saw-sql:aggregationType="nonAgg" saw-sql:tableHeading="Управленческий табель" saw-sql:columnHeading="Время" saw-sql:isDoubleColumn="false" saw-sql:columnID="c924474db27c3f33b" saw-sql:length="16" saw-sql:scale="0"/>
+				<xsd:element name="C3" type="xsd:string" minOccurs="1" maxOccurs="1" saw-sql:type="varchar" saw-sql:sqlFormula="CASE WHEN &quot;CMK3&quot;.&quot;Enter-проходы&quot;.&quot;Признак входа\выхода&quot;=-1 THEN &#39;&amp;#9668 Bыход&#39; ELSE &#39;Вход &amp;#9658&#39; END" saw-sql:displayFormula=" CASE  WHEN &quot;Enter-проходы&quot;.&quot;Признак входа\выхода&quot; = -(1) THEN &#39;&amp;#9668 Bыход&#39; ELSE &#39;Вход &amp;#9658&#39; END " saw-sql:aggregationRule="none" saw-sql:aggregationType="nonAgg" saw-sql:tableHeading="Управленческий табель" saw-sql:columnHeading="Вход/ &lt;br/&gt;Выход" saw-sql:isDoubleColumn="false" saw-sql:columnID="c444b03bc0f5f2d9d" saw-sql:length="12" saw-sql:scale="0"/>
+				<xsd:element name="C4" type="xsd:string" minOccurs="1" maxOccurs="1" saw-sql:type="varchar" saw-sql:sqlFormula="&quot;CMK3&quot;.&quot;Enter-проходы&quot;.&quot;Расположение двери&quot;" saw-sql:displayFormula="&quot;Enter-проходы&quot;.&quot;Расположение двери&quot;" saw-sql:aggregationRule="none" saw-sql:aggregationType="nonAgg" saw-sql:tableHeading="D6 TB00PERSENTR" saw-sql:columnHeading="Адрес" saw-sql:isDoubleColumn="false" saw-sql:columnID="c9067af4ceadf44ce" saw-sql:length="64" saw-sql:scale="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:schema>
+	<R>
+		<C0>&lt;span style=&quot;color:#000000&quot;&gt;Дёмин Павел Сергеевич&lt;/span&gt;</C0>
+		<C1>2021-02-01</C1>
+		<C2>2021-02-01T09:34:29</C2>
+		<C3>Вход &amp;#9658</C3>
+		<C4>Ложинская, 4 дверь к лифту</C4>
+	</R>
+	<R>
+		<C0>&lt;span style=&quot;color:#000000&quot;&gt;Дёмин Павел Сергеевич&lt;/span&gt;</C0>
+		<C1>2021-02-01</C1>
+		<C2>2021-02-01T11:56:22</C2>
+		<C3>&amp;#9668 Bыход</C3>
+		<C4>Ложинская, 4 дверь на лестницу</C4>
+	</R>
+	<R>
+		<C0>&lt;span style=&quot;color:#000000&quot;&gt;Дёмин Павел Сергеевич&lt;/span&gt;</C0>
+		<C1>2021-02-01</C1>
+		<C2>2021-02-01T11:56:42</C2>
+		<C3>Вход &amp;#9658</C3>
+		<C4>Ложинская, 4 (5 этаж) дверь на лестницу</C4>
+	</R>
+	<R>
+		<C0>&lt;span style=&quot;color:#000000&quot;&gt;Дёмин Павел Сергеевич&lt;/span&gt;</C0>
+		<C1>2021-02-01</C1>
+		<C2>2021-02-01T12:22:58</C2>
+		<C3>&amp;#9668 Bыход</C3>
+		<C4>Ложинская, 4 (5 этаж) дверь на лестницу</C4>
+	</R>
+	<R>
+		<C0>&lt;span style=&quot;color:#000000&quot;&gt;Дёмин Павел Сергеевич&lt;/span&gt;</C0>
+		<C1>2021-02-01</C1>
+		<C2>2021-02-01T12:23:15</C2>
+		<C3>Вход &amp;#9658</C3>
+		<C4>Ложинская, 4 дверь на лестницу</C4>
+	</R>
+	<R>
+		<C0>&lt;span style=&quot;color:#000000&quot;&gt;Дёмин Павел Сергеевич&lt;/span&gt;</C0>
+		<C1>2021-02-01</C1>
+		<C2>2021-02-01T12:32:25</C2>
+		<C3>&amp;#9668 Bыход</C3>
+		<C4>Ложинская, 4 дверь на лестницу</C4>
+	</R>
+	<R>
+		<C0>&lt;span style=&quot;color:#000000&quot;&gt;Дёмин Павел Сергеевич&lt;/span&gt;</C0>
+		<C1>2021-02-01</C1>
+		<C2>2021-02-01T12:44:29</C2>
+		<C3>Вход &amp;#9658</C3>
+		<C4>Ложинская, 4 дверь на лестницу</C4>
+	</R>
+	<R>
+		<C0>&lt;span style=&quot;color:#000000&quot;&gt;Дёмин Павел Сергеевич&lt;/span&gt;</C0>
+		<C1>2021-02-01</C1>
+		<C2>2021-02-01T13:43:25</C2>
+		<C3>&amp;#9668 Bыход</C3>
+		<C4>Ложинская, 4 дверь к лифту</C4>
+	</R>
+	<R>
+		<C0>&lt;span style=&quot;color:#000000&quot;&gt;Дёмин Павел Сергеевич&lt;/span&gt;</C0>
+		<C1>2021-02-01</C1>
+		<C2>2021-02-01T15:11:05</C2>
+		<C3>Вход &amp;#9658</C3>
+		<C4>Ложинская, 4 дверь к лифту</C4>
+	</R>
+	<R>
+		<C0>&lt;span style=&quot;color:#000000&quot;&gt;Дёмин Павел Сергеевич&lt;/span&gt;</C0>
+		<C1>2021-02-01</C1>
+		<C2>2021-02-01T20:22:28</C2>
+		<C3>&amp;#9668 Bыход</C3>
+		<C4>Ложинская, 4 дверь к лифту</C4>
+	</R>
+	<R>
+		<C0>&lt;span style=&quot;color:#000000&quot;&gt;Дёмин Павел Сергеевич&lt;/span&gt;</C0>
+		<C1>2021-02-02</C1>
+		<C2>2021-02-02T09:29:19</C2>
+		<C3>Вход &amp;#9658</C3>
+		<C4>Ложинская, 4 дверь к лифту</C4>
+	</R>
+	<R>
+		<C0>&lt;span style=&quot;color:#000000&quot;&gt;Дёмин Павел Сергеевич&lt;/span&gt;</C0>
+		<C1>2021-02-02</C1>
+		<C2>2021-02-02T09:55:58</C2>
+		<C3>&amp;#9668 Bыход</C3>
+		<C4>Ложинская, 4 дверь на лестницу</C4>
+	</R>
+	<R>
+		<C0>&lt;span style=&quot;color:#000000&quot;&gt;Дёмин Павел Сергеевич&lt;/span&gt;</C0>
+		<C1>2021-02-02</C1>
+		<C2>2021-02-02T09:56:18</C2>
+		<C3>Вход &amp;#9658</C3>
+		<C4>Ложинская, 4 (5 этаж) дверь на лестницу</C4>
+	</R>
+	<R>
+		<C0>&lt;span style=&quot;color:#000000&quot;&gt;Дёмин Павел Сергеевич&lt;/span&gt;</C0>
+		<C1>2021-02-02</C1>
+		<C2>2021-02-02T10:05:25</C2>
+		<C3>&amp;#9668 Bыход</C3>
+		<C4>Ложинская, 4 (5 этаж) дверь на лестницу</C4>
+	</R>
+	<R>
+		<C0>&lt;span style=&quot;color:#000000&quot;&gt;Дёмин Павел Сергеевич&lt;/span&gt;</C0>
+		<C1>2021-02-02</C1>
+		<C2>2021-02-02T10:05:53</C2>
+		<C3>Вход &amp;#9658</C3>
+		<C4>Ложинская, 4 дверь на лестницу</C4>
+	</R>
+	<R>
+		<C0>&lt;span style=&quot;color:#000000&quot;&gt;Дёмин Павел Сергеевич&lt;/span&gt;</C0>
+		<C1>2021-02-02</C1>
+		<C2>2021-02-02T13:12:15</C2>
+		<C3>&amp;#9668 Bыход</C3>
+		<C4>Ложинская, 4 дверь к лифту</C4>
+	</R>
+	<R>
+		<C0>&lt;span style=&quot;color:#000000&quot;&gt;Дёмин Павел Сергеевич&lt;/span&gt;</C0>
+		<C1>2021-02-02</C1>
+		<C2>2021-02-02T14:07:06</C2>
+		<C3>Вход &amp;#9658</C3>
+		<C4>Ложинская, 4 дверь к лифту</C4>
+	</R>
+	<R>
+		<C0>&lt;span style=&quot;color:#000000&quot;&gt;Дёмин Павел Сергеевич&lt;/span&gt;</C0>
+		<C1>2021-02-02</C1>
+		<C2>2021-02-02T18:59:46</C2>
+		<C3>&amp;#9668 Bыход</C3>
+		<C4>Ложинская, 4 дверь к лифту</C4>
+	</R>
+	<R>
+		<C0>&lt;span style=&quot;color:#000000&quot;&gt;Дёмин Павел Сергеевич&lt;/span&gt;</C0>
+		<C1>2021-02-03</C1>
+		<C2>2021-02-03T09:32:18</C2>
+		<C3>Вход &amp;#9658</C3>
+		<C4>Ложинская, 4 дверь к лифту</C4>
+	</R>
+	<R>
+		<C0>&lt;span style=&quot;color:#000000&quot;&gt;Дёмин Павел Сергеевич&lt;/span&gt;</C0>
+		<C1>2021-02-03</C1>
+		<C2>2021-02-03T10:56:16</C2>
+		<C3>&amp;#9668 Bыход</C3>
+		<C4>Ложинская, 4 дверь на лестницу</C4>
+	</R>
+	<R>
+		<C0>&lt;span style=&quot;color:#000000&quot;&gt;Дёмин Павел Сергеевич&lt;/span&gt;</C0>
+		<C1>2021-02-03</C1>
+		<C2>2021-02-03T10:56:41</C2>
+		<C3>Вход &amp;#9658</C3>
+		<C4>Ложинская, 4 (5 этаж) дверь на лестницу</C4>
+	</R>
+	<R>
+		<C0>&lt;span style=&quot;color:#000000&quot;&gt;Дёмин Павел Сергеевич&lt;/span&gt;</C0>
+		<C1>2021-02-03</C1>
+		<C2>2021-02-03T11:19:23</C2>
+		<C3>&amp;#9668 Bыход</C3>
+		<C4>Ложинская, 4 (5 этаж) дверь на лестницу</C4>
+	</R>
+	<R>
+		<C0>&lt;span style=&quot;color:#000000&quot;&gt;Дёмин Павел Сергеевич&lt;/span&gt;</C0>
+		<C1>2021-02-03</C1>
+		<C2>2021-02-03T11:19:44</C2>
+		<C3>Вход &amp;#9658</C3>
+		<C4>Ложинская, 4 дверь на лестницу</C4>
+	</R>
+	<R>
+		<C0>&lt;span style=&quot;color:#000000&quot;&gt;Дёмин Павел Сергеевич&lt;/span&gt;</C0>
+		<C1>2021-02-03</C1>
+		<C2>2021-02-03T13:49:46</C2>
+		<C3>&amp;#9668 Bыход</C3>
+		<C4>Ложинская, 4 дверь к лифту</C4>
+	</R>
+	<R>
+		<C0>&lt;span style=&quot;color:#000000&quot;&gt;Дёмин Павел Сергеевич&lt;/span&gt;</C0>
+		<C1>2021-02-03</C1>
+		<C2>2021-02-03T15:20:17</C2>
+		<C3>Вход &amp;#9658</C3>
+		<C4>Ложинская, 4 дверь к лифту</C4>
+	</R>
+	<R>
+		<C0>&lt;span style=&quot;color:#000000&quot;&gt;Дёмин Павел Сергеевич&lt;/span&gt;</C0>
+		<C1>2021-02-03</C1>
+		<C2>2021-02-03T15:43:14</C2>
+		<C3>&amp;#9668 Bыход</C3>
+		<C4>Ложинская, 4 дверь на лестницу</C4>
+	</R>
+	<R>
+		<C0>&lt;span style=&quot;color:#000000&quot;&gt;Дёмин Павел Сергеевич&lt;/span&gt;</C0>
+		<C1>2021-02-03</C1>
+		<C2>2021-02-03T15:43:38</C2>
+		<C3>Вход &amp;#9658</C3>
+		<C4>Ложинская, 4 (5 этаж) дверь на лестницу</C4>
+	</R>
+	<R>
+		<C0>&lt;span style=&quot;color:#000000&quot;&gt;Дёмин Павел Сергеевич&lt;/span&gt;</C0>
+		<C1>2021-02-03</C1>
+		<C2>2021-02-03T16:07:50</C2>
+		<C3>&amp;#9668 Bыход</C3>
+		<C4>Ложинская, 4 (5 этаж) дверь на лестницу</C4>
+	</R>
+	<R>
+		<C0>&lt;span style=&quot;color:#000000&quot;&gt;Дёмин Павел Сергеевич&lt;/span&gt;</C0>
+		<C1>2021-02-03</C1>
+		<C2>2021-02-03T16:08:12</C2>
+		<C3>Вход &amp;#9658</C3>
+		<C4>Ложинская, 4 дверь на лестницу</C4>
+	</R>
+	<R>
+		<C0>&lt;span style=&quot;color:#000000&quot;&gt;Дёмин Павел Сергеевич&lt;/span&gt;</C0>
+		<C1>2021-02-03</C1>
+		<C2>2021-02-03T22:12:50</C2>
+		<C3>&amp;#9668 Bыход</C3>
+		<C4>Ложинская, 4 дверь к лифту</C4>
+	</R>
+	<R>
+		<C0>&lt;span style=&quot;color:#000000&quot;&gt;Дёмин Павел Сергеевич&lt;/span&gt;</C0>
+		<C1>2021-02-04</C1>
+		<C2>2021-02-04T09:48:58</C2>
+		<C3>Вход &amp;#9658</C3>
+		<C4>Ложинская, 4 дверь к лифту</C4>
+	</R>
+	<R>
+		<C0>&lt;span style=&quot;color:#000000&quot;&gt;Дёмин Павел Сергеевич&lt;/span&gt;</C0>
+		<C1>2021-02-04</C1>
+		<C2>2021-02-04T11:37:43</C2>
+		<C3>&amp;#9668 Bыход</C3>
+		<C4>Ложинская, 4 дверь на лестницу</C4>
+	</R>
+	<R>
+		<C0>&lt;span style=&quot;color:#000000&quot;&gt;Дёмин Павел Сергеевич&lt;/span&gt;</C0>
+		<C1>2021-02-04</C1>
+		<C2>2021-02-04T11:38:05</C2>
+		<C3>Вход &amp;#9658</C3>
+		<C4>Ложинская, 4 (5 этаж) дверь на лестницу</C4>
+	</R>
+	<R>
+		<C0>&lt;span style=&quot;color:#000000&quot;&gt;Дёмин Павел Сергеевич&lt;/span&gt;</C0>
+		<C1>2021-02-04</C1>
+		<C2>2021-02-04T12:12:27</C2>
+		<C3>&amp;#9668 Bыход</C3>
+		<C4>Ложинская, 4 (5 этаж) дверь на лестницу</C4>
+	</R>
+	<R>
+		<C0>&lt;span style=&quot;color:#000000&quot;&gt;Дёмин Павел Сергеевич&lt;/span&gt;</C0>
+		<C1>2021-02-04</C1>
+		<C2>2021-02-04T12:12:49</C2>
+		<C3>Вход &amp;#9658</C3>
+		<C4>Ложинская, 4 дверь на лестницу</C4>
+	</R>
+	<R>
+		<C0>&lt;span style=&quot;color:#000000&quot;&gt;Дёмин Павел Сергеевич&lt;/span&gt;</C0>
+		<C1>2021-02-04</C1>
+		<C2>2021-02-04T13:57:32</C2>
+		<C3>&amp;#9668 Bыход</C3>
+		<C4>Ложинская, 4 дверь к лифту</C4>
+	</R>
+	<R>
+		<C0>&lt;span style=&quot;color:#000000&quot;&gt;Дёмин Павел Сергеевич&lt;/span&gt;</C0>
+		<C1>2021-02-04</C1>
+		<C2>2021-02-04T15:17:23</C2>
+		<C3>Вход &amp;#9658</C3>
+		<C4>Ложинская, 4 дверь к лифту</C4>
+	</R>
+	<R>
+		<C0>&lt;span style=&quot;color:#000000&quot;&gt;Дёмин Павел Сергеевич&lt;/span&gt;</C0>
+		<C1>2021-02-04</C1>
+		<C2>2021-02-04T17:10:56</C2>
+		<C3>&amp;#9668 Bыход</C3>
+		<C4>Ложинская, 4 дверь на лестницу</C4>
+	</R>
+	<R>
+		<C0>&lt;span style=&quot;color:#000000&quot;&gt;Дёмин Павел Сергеевич&lt;/span&gt;</C0>
+		<C1>2021-02-04</C1>
+		<C2>2021-02-04T17:11:15</C2>
+		<C3>Вход &amp;#9658</C3>
+		<C4>Ложинская, 4 (5 этаж) дверь на лестницу</C4>
+	</R>
+	<R>
+		<C0>&lt;span style=&quot;color:#000000&quot;&gt;Дёмин Павел Сергеевич&lt;/span&gt;</C0>
+		<C1>2021-02-04</C1>
+		<C2>2021-02-04T17:30:49</C2>
+		<C3>&amp;#9668 Bыход</C3>
+		<C4>Ложинская, 4 (5 этаж) дверь на лестницу</C4>
+	</R>
+	<R>
+		<C0>&lt;span style=&quot;color:#000000&quot;&gt;Дёмин Павел Сергеевич&lt;/span&gt;</C0>
+		<C1>2021-02-04</C1>
+		<C2>2021-02-04T17:31:13</C2>
+		<C3>Вход &amp;#9658</C3>
+		<C4>Ложинская, 4 дверь на лестницу</C4>
+	</R>
+</RS>

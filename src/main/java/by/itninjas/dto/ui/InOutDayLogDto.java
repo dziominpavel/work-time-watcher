@@ -4,6 +4,7 @@ import by.itninjas.entity.enums.InOutType;
 import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,7 +17,7 @@ public class InOutDayLogDto implements Serializable {
 
     private InOutType type;
 
-    private LocalDateTime datetime;
+    private LocalTime time;
 
     private String address;
 }

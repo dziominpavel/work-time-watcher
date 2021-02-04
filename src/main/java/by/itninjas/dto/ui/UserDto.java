@@ -17,6 +17,6 @@ public class UserDto implements Serializable {
 
     private String name;
 
-    private LinkedList<DayLogDto> dayLogs = new LinkedList<>();
+    private List<DayLogDto> dayLogs = new LinkedList<>();
 
 }

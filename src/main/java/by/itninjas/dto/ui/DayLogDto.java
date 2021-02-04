@@ -3,6 +3,7 @@ package by.itninjas.dto.ui;
 import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.LinkedList;
 import java.util.List;
 import lombok.Getter;
@@ -17,6 +18,12 @@ public class DayLogDto implements Serializable {
 
     private LocalDate date;
 
-    private LinkedList<InOutDayLogDto> inOutDayLogs = new LinkedList<>();
+    private LocalTime workedInPlan = LocalTime.of(8, 0, 0);
+
+    private LocalTime workedInFact;
+
+    private List<InOutDayLogDto> inOutDayLogs = new LinkedList<>();
+
+
 
 }
