@@ -11,7 +11,7 @@
 
     <groupId>by.itninjas</groupId>
     <artifactId>watch-dogs</artifactId>
-    <version>0.1.0</version>
+    <version>0.2.0</version>
     <name>watch-dogs</name>
     <description>Project for monitoring of work time</description>
 

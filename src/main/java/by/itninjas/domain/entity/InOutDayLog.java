@@ -1,16 +1,15 @@
-package by.itninjas.dto.ui;
+package by.itninjas.domain.entity;
 
-import by.itninjas.entity.enums.InOutType;
+import by.itninjas.domain.enums.InOutType;
 import java.io.Serial;
 import java.io.Serializable;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 import lombok.Getter;
 import lombok.Setter;
 
 @Setter
 @Getter
-public class InOutDayLogDto implements Serializable {
+public class InOutDayLog implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 1L;

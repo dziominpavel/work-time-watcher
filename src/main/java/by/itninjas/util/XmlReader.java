@@ -1,9 +1,7 @@
-package by.itninjas.converter;
+package by.itninjas.util;
 
-import by.itninjas.entity.Item;
-import by.itninjas.entity.XmlEntity;
+import by.itninjas.domain.xml.RowCollection;
 import java.io.StringReader;
-import java.util.List;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Unmarshaller;
 import org.springframework.stereotype.Component;
@@ -20,7 +18,7 @@ public class XmlReader {
 
     private static final String STRING_REPLACEMENT = "";
 
-    public XmlEntity parse(MultipartFile file) {
+    public RowCollection parse(MultipartFile file) {
 
         try {
             byte[] bytes = file.getBytes();
@@ -30,13 +28,11 @@ public class XmlReader {
             String s4 = s3.replace(STRING_REPLACING4, STRING_REPLACEMENT);
             String correctXml = s4.replace(STRING_REPLACING5, STRING_REPLACEMENT);
 
-            JAXBContext jaxbContext = JAXBContext.newInstance(XmlEntity.class);
+            JAXBContext jaxbContext = JAXBContext.newInstance(RowCollection.class);
             Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
             StringReader reader = new StringReader(correctXml);
 
-            XmlEntity entity = (XmlEntity) unmarshaller.unmarshal(reader);
-
-            return entity;
+            return (RowCollection) unmarshaller.unmarshal(reader);
 
         } catch (Exception e) {
             e.printStackTrace();

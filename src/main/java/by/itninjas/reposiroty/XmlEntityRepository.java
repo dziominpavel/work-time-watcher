@@ -1,14 +1,14 @@
 package by.itninjas.reposiroty;
 
-import by.itninjas.entity.XmlEntity;
+import by.itninjas.domain.xml.RowCollection;
 import java.util.ArrayList;
 import org.springframework.stereotype.Repository;
 
 @Repository
 public interface XmlEntityRepository {
 
-    void save(XmlEntity xmlEntity);
+    void save(RowCollection rowCollection);
 
-    ArrayList<XmlEntity> getAll();
+    ArrayList<RowCollection> getAll();
 
 }

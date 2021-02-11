@@ -1,4 +1,4 @@
-package by.itninjas.entity;
+package by.itninjas.domain.xml;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,17 +10,17 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "RS")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class XmlEntity {
+public class RowCollection {
 
     @XmlElement(name = "R")
-    private List<Item> items = new ArrayList<>();
+    private List<Row> rowList = new ArrayList<>();
 
-    public List<Item> getItems() {
-        return items;
+    public List<Row> getRow() {
+        return rowList;
     }
 
-    public void setItems(List<Item> items) {
-        this.items = items;
+    public void setRow(List<Row> items) {
+        this.rowList = items;
     }
 
     @Override
@@ -28,15 +28,15 @@ public class XmlEntity {
         if (this == o) {
             return true;
         }
-        if (!(o instanceof XmlEntity)) {
+        if (!(o instanceof RowCollection)) {
             return false;
         }
-        XmlEntity xmlEntity = (XmlEntity) o;
-        return items.equals(xmlEntity.items);
+        RowCollection xmlEntity = (RowCollection) o;
+        return rowList.equals(xmlEntity.rowList);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(items);
+        return Objects.hash(rowList);
     }
 }

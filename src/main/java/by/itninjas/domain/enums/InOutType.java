@@ -1,4 +1,4 @@
-package by.itninjas.entity.enums;
+package by.itninjas.domain.enums;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -29,13 +29,10 @@ public enum InOutType {
     private static final Map<String, InOutType> mapByValue = new HashMap<>
         (Arrays.stream(InOutType.values()).collect(Collectors.toMap(InOutType::getValue, Function.identity())));
 
-
-
     public static void validateValue(String value) {
         if (!mapByValue.containsKey(value)) {
             throw new IllegalArgumentException("InOutType value [" + value + "] not supported.");
         }
     }
-
 
 }

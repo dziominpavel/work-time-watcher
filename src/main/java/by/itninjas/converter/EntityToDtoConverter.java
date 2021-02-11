@@ -1,11 +1,11 @@
 package by.itninjas.converter;
 
-import by.itninjas.dto.ui.DayLogDto;
-import by.itninjas.dto.ui.InOutDayLogDto;
-import by.itninjas.dto.ui.UserDto;
-import by.itninjas.entity.Item;
-import by.itninjas.entity.XmlEntity;
-import by.itninjas.entity.enums.InOutType;
+import by.itninjas.dto.DayLogDto;
+import by.itninjas.dto.InOutDayLogDto;
+import by.itninjas.dto.UserDto;
+import by.itninjas.domain.xml.Row;
+import by.itninjas.domain.xml.RowCollection;
+import by.itninjas.domain.enums.InOutType;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
@@ -17,15 +17,15 @@ import org.springframework.stereotype.Component;
 @Component
 public class EntityToDtoConverter {
 
-    public UserDto convert(XmlEntity xmlEntity) {
+    public UserDto convert(RowCollection xmlEntity) {
 
         UserDto userDto = new UserDto();
-        List<Item> items = xmlEntity.getItems();
+        List<Row> items = xmlEntity.getRow();
         userDto.setName(items.get(0).getC0());
 
         List<DayLogDto> dayLogDtoList = items
                                             .stream()
-                                            .map(Item::getC1)
+                                            .map(Row::getC1)
                                             .distinct()
                                             .sorted()
                                             .map(dateAsString -> {
@@ -51,27 +51,6 @@ public class EntityToDtoConverter {
                                             })
                                             .collect(Collectors.toList());
         userDto.setDayLogs(dayLogDtoList);
-
-//        for (Item item : items) {
-//
-//            DayLogDto dayLogDto = new DayLogDto();
-//
-//            InOutDayLogDto inOutDayLogDto = new InOutDayLogDto();
-//            inOutDayLogDto.setType(InOutType.getByValue(item.getC3()));
-//            String dateTime = item.getC2();
-//            LocalDateTime localDateTime = LocalDateTime.parse(dateTime, DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss"));
-//            inOutDayLogDto.setTime(localDateTime);
-//            inOutDayLogDto.setAddress(item.getC4());
-//
-//            dayLogDto.getInOutDayLogs().add(inOutDayLogDto);
-//
-//            String date = item.getC1();
-//            LocalDate localDate = LocalDate.parse(date, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-//            dayLogDto.setDate(localDate);
-//
-//            userDto.getDayLogs().add(dayLogDto);
-//
-//        }
 
         return userDto;
     }

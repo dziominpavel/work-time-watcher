@@ -1,14 +1,11 @@
-package by.itninjas.entity;
+package by.itninjas.domain.xml;
 
 import java.util.Objects;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
 
 //@XmlRootElement(name = "R")
 //@XmlAccessorType(XmlAccessType.PROPERTY)
-public class Item {
+public class Row {
 
     @XmlElement
     private String C0;
@@ -75,10 +72,10 @@ public class Item {
         if (this == o) {
             return true;
         }
-        if (!(o instanceof Item)) {
+        if (!(o instanceof Row)) {
             return false;
         }
-        Item item = (Item) o;
+        Row item = (Row) o;
         return C0.equals(item.C0) && C1.equals(item.C1) && C2.equals(item.C2) && C3.equals(item.C3) && C4.equals(item.C4);
     }
 

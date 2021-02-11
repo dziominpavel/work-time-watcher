@@ -1,4 +1,4 @@
-package by.itninjas.dto.ui;
+package by.itninjas.domain.entity;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -11,7 +11,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class DayLogDto implements Serializable {
+public class DayLog implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 1L;
@@ -22,7 +22,7 @@ public class DayLogDto implements Serializable {
 
     private LocalTime workedInFact;
 
-    private List<InOutDayLogDto> inOutDayLogs = new LinkedList<>();
+    private List<InOutDayLog> inOutDayLogs = new LinkedList<>();
 
 
 

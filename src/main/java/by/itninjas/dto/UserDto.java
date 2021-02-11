@@ -1,4 +1,4 @@
-package by.itninjas.dto.ui;
+package by.itninjas.dto;
 
 import java.io.Serial;
 import java.io.Serializable;
