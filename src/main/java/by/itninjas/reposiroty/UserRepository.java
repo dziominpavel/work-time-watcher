@@ -10,4 +10,6 @@ public interface UserRepository {
     void save(User user);
 
     List<User> getAll();
+
+    User getById(int id);
 }

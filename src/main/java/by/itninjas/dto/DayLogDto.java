@@ -18,9 +18,9 @@ public class DayLogDto implements Serializable {
 
     private LocalDate date;
 
-    private LocalTime workedInPlan = LocalTime.of(8, 0, 0);
+    private LocalTime timeRequired = LocalTime.of(8, 0, 0);
 
-    private LocalTime workedInFact;
+    private LocalTime timeWorkedInFact;
 
     private List<InOutDayLogDto> inOutDayLogs = new LinkedList<>();
 

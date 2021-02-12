@@ -2,7 +2,6 @@ package by.itninjas.controller;
 
 import by.itninjas.dto.UserDto;
 import by.itninjas.service.UserService;
-import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,7 +17,7 @@ public class UserController {
 
     @GetMapping("/user/{userId}")
     public UserDto getUser(@PathVariable(name = "userId") int userId) {
-        return new UserDto();
+        return userService.getById(userId);
     }
 
     @GetMapping("/user")

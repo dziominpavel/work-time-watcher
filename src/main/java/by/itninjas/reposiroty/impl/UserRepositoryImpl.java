@@ -40,4 +40,9 @@ public class UserRepositoryImpl implements UserRepository {
     public List<User> getAll() {
         return new ArrayList<>(STORAGE.values());
     }
+
+    @Override
+    public User getById(int id) {
+        return STORAGE.values().stream().filter(e -> e.getId().equals(id)).findFirst().orElseThrow(RuntimeException::new);
+    }
 }

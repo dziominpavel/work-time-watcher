@@ -15,9 +15,9 @@ import java.util.stream.Collectors;
 import org.springframework.stereotype.Component;
 
 @Component
-public class RowCollectionToUserConverter {
+public class XmlConverter {
 
-    public User convert(RowCollection rowCollection) {
+    public User convertToUser(RowCollection rowCollection) {
 
         User user = new User();
         List<Row> items = rowCollection.getRow();

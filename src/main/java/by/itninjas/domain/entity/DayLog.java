@@ -4,7 +4,7 @@ import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.LinkedList;
+import java.util.Collections;
 import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
@@ -22,8 +22,7 @@ public class DayLog implements Serializable {
 
     private LocalTime workedInFact;
 
-    private List<InOutDayLog> inOutDayLogs = new LinkedList<>();
-
+    private List<InOutDayLog> inOutDayLogs = Collections.emptyList();
 
 
 }

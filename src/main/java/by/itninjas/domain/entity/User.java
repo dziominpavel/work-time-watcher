@@ -1,5 +1,6 @@
 package by.itninjas.domain.entity;
 
+import java.util.Collections;
 import java.util.List;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -14,6 +15,6 @@ public class User {
 
     private String name;
 
-    private List<DayLog> dayLogs;
+    private List<DayLog> dayLogs = Collections.emptyList();
 
 }

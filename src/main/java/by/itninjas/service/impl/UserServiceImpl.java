@@ -1,6 +1,6 @@
 package by.itninjas.service.impl;
 
-import by.itninjas.converter.UserToUserDtoConverter;
+import by.itninjas.converter.UserConverter;
 import by.itninjas.dto.UserDto;
 import by.itninjas.reposiroty.UserRepository;
 import by.itninjas.service.UserService;
@@ -13,13 +13,18 @@ import org.springframework.stereotype.Component;
 public class UserServiceImpl implements UserService {
 
     @Autowired
-    UserToUserDtoConverter userToUserDtoConverter;
+    UserConverter userConverter;
 
     @Autowired
     UserRepository userRepository;
 
     @Override
     public List<UserDto> getAll() {
-        return userRepository.getAll().stream().map(userToUserDtoConverter::convert).collect(Collectors.toList());
+        return userRepository.getAll().stream().map(userConverter::fromEntityToDto).collect(Collectors.toList());
+    }
+
+    @Override
+    public UserDto getById(int userId) {
+        return userConverter.fromEntityToDto(userRepository.getById(userId));
     }
 }
