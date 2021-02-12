@@ -22,7 +22,7 @@ public class DayLog implements Serializable {
 
     private LocalTime workedInFact;
 
-    private List<InOutDayLog> inOutDayLogs = Collections.emptyList();
+    private List<InOutDayLog> inOutDayLogs;
 
 
 }
