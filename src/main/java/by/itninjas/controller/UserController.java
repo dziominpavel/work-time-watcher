@@ -1,19 +1,29 @@
 package by.itninjas.controller;
 
 import by.itninjas.dto.UserDto;
+import by.itninjas.service.UserService;
+import java.util.ArrayList;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 public class UserController {
 
 
-    @GetMapping("/parse")
-    public UserDto parse(@RequestParam("files") MultipartFile[] files) {
+    @Autowired
+    private UserService userService;
 
+    @GetMapping("/user/{userId}")
+    public UserDto getUser(@PathVariable(name = "userId") int userId) {
         return new UserDto();
+    }
+
+    @GetMapping("/user")
+    public List<UserDto> getUser() {
+        return userService.getAll();
     }
 
 }
