@@ -17,12 +17,12 @@ public class EmployeeController {
     @Autowired
     private UserService userService;
 
-    @GetMapping("/user/{userId}")
-    public UserDto getUser(@PathVariable(name = "userId") int userId) {
-        return userService.getById(userId);
+    @GetMapping("/{employeeId}")
+    public UserDto getUser(@PathVariable(name = "employeeId") int employeeId) {
+        return userService.getById(employeeId);
     }
 
-    @GetMapping("/user")
+    @GetMapping
     public List<UserDto> getUser() {
         return userService.getAll();
     }
