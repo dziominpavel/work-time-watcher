@@ -1,9 +1,9 @@
 package by.itninjas.service.impl;
 
 import by.itninjas.converter.XmlConverter;
-import by.itninjas.domain.entity.User;
+import by.itninjas.domain.entity.Employee;
 import by.itninjas.domain.xml.RowCollection;
-import by.itninjas.reposiroty.UserRepository;
+import by.itninjas.reposiroty.EmployeeRepository;
 import by.itninjas.service.FileUploadingService;
 import by.itninjas.util.XmlReader;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,15 +21,15 @@ public class FileUploadingServiceImpl implements FileUploadingService {
     private XmlConverter xmlConverter;
 
     @Autowired
-    @Qualifier("userRepositoryImpl")
-    private UserRepository userRepository;
+    @Qualifier("employeeRepositoryImpl")
+    private EmployeeRepository employeeRepository;
 
     @Override
     public void upload(MultipartFile file) {
 
         RowCollection rowCollection = xmlReader.parse(file);
-        User user = xmlConverter.convertToUser(rowCollection);
-        userRepository.save(user);
-
+        Employee employee = xmlConverter.convertToEmployee(rowCollection);
+        employeeRepository.save(employee);
+        System.out.println();
     }
 }

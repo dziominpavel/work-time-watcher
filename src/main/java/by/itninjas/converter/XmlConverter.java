@@ -1,8 +1,8 @@
 package by.itninjas.converter;
 
 import by.itninjas.domain.entity.DayLog;
+import by.itninjas.domain.entity.Employee;
 import by.itninjas.domain.entity.InOutDayLog;
-import by.itninjas.domain.entity.User;
 import by.itninjas.domain.enums.InOutType;
 import by.itninjas.domain.xml.Row;
 import by.itninjas.domain.xml.RowCollection;
@@ -17,11 +17,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class XmlConverter {
 
-    public User convertToUser(RowCollection rowCollection) {
+    public Employee convertToEmployee(RowCollection rowCollection) {
 
-        User user = new User();
+        Employee employee = new Employee();
         List<Row> items = rowCollection.getRow();
-        user.setName(items.get(0).getC0());
+        employee.setName(items.get(0).getC0());
 
         List<DayLog> dayLogDtoList = items
             .stream()
@@ -50,9 +50,9 @@ public class XmlConverter {
                 return dayLog;
             })
             .collect(Collectors.toList());
-        user.setDayLogs(dayLogDtoList);
+        employee.setDayLogs(dayLogDtoList);
 
-        return user;
+        return employee;
     }
 
     private LocalTime calcFactWorked(List<InOutDayLog> inOutDayLogs) {

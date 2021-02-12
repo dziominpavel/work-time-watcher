@@ -1,7 +1,7 @@
 package by.itninjas.reposiroty.impl;
 
-import by.itninjas.domain.entity.User;
-import by.itninjas.reposiroty.UserRepository;
+import by.itninjas.domain.entity.Employee;
+import by.itninjas.reposiroty.EmployeeRepository;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -9,21 +9,21 @@ import java.util.concurrent.ConcurrentHashMap;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class UserRepositoryImpl implements UserRepository {
+public class EmployeeRepositoryImpl implements EmployeeRepository {
 
-    private final Map<Integer, User> STORAGE = new ConcurrentHashMap<>();
+    private final Map<Integer, Employee> STORAGE = new ConcurrentHashMap<>();
 
     @Override
-    public void save(User user) {
-        User userWithSuchName = STORAGE
+    public void save(Employee employee) {
+        Employee employeeWithSuchName = STORAGE
             .values()
             .stream()
-            .filter(u -> u.getName().equals(user.getName()))
+            .filter(u -> u.getName().equals(employee.getName()))
             .findFirst()
             .orElse(null);
 
-        if (userWithSuchName != null) {
-            STORAGE.put(userWithSuchName.getId(), userWithSuchName);
+        if (employeeWithSuchName != null) {
+            STORAGE.put(employeeWithSuchName.getId(), employeeWithSuchName);
         } else {
             int maxId = STORAGE
                 .keySet()
@@ -31,18 +31,18 @@ public class UserRepositoryImpl implements UserRepository {
                 .max(Integer::compareTo)
                 .orElse(0);
             int newId = maxId + 1;
-            user.setId(newId);
-            STORAGE.put(newId, user);
+            employee.setId(newId);
+            STORAGE.put(newId, employee);
         }
     }
 
     @Override
-    public List<User> getAll() {
+    public List<Employee> getAll() {
         return new ArrayList<>(STORAGE.values());
     }
 
     @Override
-    public User getById(int id) {
+    public Employee getById(int id) {
         return STORAGE.values().stream().filter(e -> e.getId().equals(id)).findFirst().orElseThrow(RuntimeException::new);
     }
 }

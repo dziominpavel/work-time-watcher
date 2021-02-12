@@ -7,6 +7,6 @@ import org.springframework.stereotype.Component;
 @Component
 public interface LogService {
 
-    List<DayLogDto> getAllByUserId(int userId);
+    List<DayLogDto> getAllByEmployeeId(int userId);
 
 }

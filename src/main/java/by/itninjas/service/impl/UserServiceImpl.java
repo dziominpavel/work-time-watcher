@@ -1,30 +1,30 @@
 package by.itninjas.service.impl;
 
-import by.itninjas.converter.UserConverter;
-import by.itninjas.dto.UserDto;
-import by.itninjas.reposiroty.UserRepository;
-import by.itninjas.service.UserService;
+import by.itninjas.converter.EmployeeConverter;
+import by.itninjas.dto.EmployeeDto;
+import by.itninjas.reposiroty.EmployeeRepository;
+import by.itninjas.service.EmployeeService;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl implements EmployeeService {
 
     @Autowired
-    UserConverter userConverter;
+    EmployeeConverter employeeConverter;
 
     @Autowired
-    UserRepository userRepository;
+    EmployeeRepository employeeRepository;
 
     @Override
-    public List<UserDto> getAll() {
-        return userRepository.getAll().stream().map(userConverter::fromEntityToDto).collect(Collectors.toList());
+    public List<EmployeeDto> getAll() {
+        return employeeRepository.getAll().stream().map(employeeConverter::fromEntityToDto).collect(Collectors.toList());
     }
 
     @Override
-    public UserDto getById(int userId) {
-        return userConverter.fromEntityToDto(userRepository.getById(userId));
+    public EmployeeDto getById(int userId) {
+        return employeeConverter.fromEntityToDto(employeeRepository.getById(userId));
     }
 }

@@ -14,10 +14,9 @@ public class LogController {
     @Autowired
     private LogService logService;
 
-    @GetMapping("/log/{userId}")
-    public List<DayLogDto> getUserLogs(@PathVariable(name = "userId") int userId) {
-        return logService.getAllByUserId(userId);
+    @GetMapping("/log/{employeeId}")
+    public List<DayLogDto> getUserLogs(@PathVariable(name = "employeeId") int employeeId) {
+        return logService.getAllByEmployeeId(employeeId);
     }
-
 
 }
