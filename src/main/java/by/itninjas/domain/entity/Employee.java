@@ -9,12 +9,12 @@ import lombok.Setter;
 @Getter
 @Setter
 @EqualsAndHashCode
-public class User {
+public class Employee {
 
     private Integer id;
 
     private String name;
 
-    private List<DayLog> dayLogs = Collections.emptyList();
+    private List<DayLog> dayLogs;
 
 }

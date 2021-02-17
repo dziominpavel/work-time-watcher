@@ -2,12 +2,13 @@ package by.itninjas.dto;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.time.LocalTime;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class UserDto implements Serializable {
+public class EmployeeDto implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 1L;
@@ -15,5 +16,9 @@ public class UserDto implements Serializable {
     private String id;
 
     private String name;
+
+    private LocalTime timeRequired;
+
+    private LocalTime timeWorkedInFact;
 
 }

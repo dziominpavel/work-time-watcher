@@ -4,7 +4,6 @@ import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.Collections;
 import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
@@ -18,7 +17,7 @@ public class DayLog implements Serializable {
 
     private LocalDate date;
 
-    private LocalTime workedInPlan = LocalTime.of(8, 0, 0);
+    private LocalTime workedInPlan;
 
     private LocalTime workedInFact;
 
