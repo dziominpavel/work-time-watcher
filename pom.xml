@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -10,9 +10,9 @@
     </parent>
 
     <groupId>by.itninjas</groupId>
-    <artifactId>watch-dogs</artifactId>
-    <version>0.2.0</version>
-    <name>watch-dogs</name>
+    <artifactId>TimeWatcher</artifactId>
+    <version>1.0.0</version>
+    <name>Time Watcher</name>
     <description>Project for monitoring of work time</description>
 
     <properties>
@@ -37,18 +37,16 @@
             <scope>test</scope>
         </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>jakarta.xml.bind</groupId>-->
-<!--            <artifactId>jakarta.xml.bind-api</artifactId>-->
-<!--            <version>3.0.0</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
 
-                <!-- https://mvnrepository.com/artifact/javax.xml/jaxb-api -->
-<!--        <dependency>-->
-<!--            <groupId>javax.xml</groupId>-->
-<!--            <artifactId>jaxb-api</artifactId>-->
-<!--            <version>2.1</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.11</version>
+        </dependency>
 
         <dependency>
             <groupId>com.sun.xml.bind</groupId>
@@ -79,5 +77,24 @@
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>local</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <activatedProperties>local</activatedProperties>
+            </properties>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <properties>
+                <activatedProperties>prod</activatedProperties>
+            </properties>
+        </profile>
+    </profiles>
+
 
 </project>

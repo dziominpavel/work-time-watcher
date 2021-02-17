@@ -5,13 +5,14 @@ import by.itninjas.reposiroty.EmployeeRepository;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 import org.springframework.stereotype.Repository;
 
 @Repository
 public class EmployeeRepositoryImpl implements EmployeeRepository {
 
-    private final Map<Integer, Employee> STORAGE = new ConcurrentHashMap<>();
+    private static final Map<Integer, Employee> STORAGE = new ConcurrentHashMap<>();
 
     @Override
     public void save(Employee employee) {
@@ -42,7 +43,8 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
     }
 
     @Override
-    public Employee getById(int id) {
-        return STORAGE.values().stream().filter(e -> e.getId().equals(id)).findFirst().orElseThrow(RuntimeException::new);
+    public Optional<Employee> getById(int id) {
+        Employee searched = STORAGE.getOrDefault(id, null);
+        return searched == null ? Optional.empty() : Optional.of(searched);
     }
 }

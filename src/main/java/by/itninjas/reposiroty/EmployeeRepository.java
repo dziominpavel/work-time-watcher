@@ -2,14 +2,13 @@ package by.itninjas.reposiroty;
 
 import by.itninjas.domain.entity.Employee;
 import java.util.List;
-import org.springframework.stereotype.Repository;
+import java.util.Optional;
 
-@Repository
 public interface EmployeeRepository {
 
     void save(Employee employee);
 
     List<Employee> getAll();
 
-    Employee getById(int id);
+    Optional<Employee> getById(int id);
 }

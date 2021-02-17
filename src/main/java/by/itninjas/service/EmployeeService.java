@@ -1,13 +1,14 @@
 package by.itninjas.service;
 
-import by.itninjas.dto.EmployeeDto;
+import by.itninjas.domain.entity.DayLog;
+import by.itninjas.domain.entity.Employee;
 import java.util.List;
-import org.springframework.stereotype.Component;
 
-@Component
 public interface EmployeeService {
 
-    List<EmployeeDto> getAll();
+    List<Employee> getAll();
 
-    EmployeeDto getById(int userId);
+    Employee getById(int employeeId);
+
+    void create(String name, List<DayLog> dayLogs);
 }

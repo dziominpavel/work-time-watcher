@@ -17,7 +17,7 @@ public class DayLog implements Serializable {
 
     private LocalDate date;
 
-    private LocalTime workedInPlan = LocalTime.of(8, 0, 0);
+    private LocalTime workedInPlan;
 
     private LocalTime workedInFact;
 
