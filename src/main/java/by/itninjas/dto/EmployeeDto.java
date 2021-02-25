@@ -2,6 +2,7 @@ package by.itninjas.dto;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.time.LocalTime;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,8 +17,8 @@ public class EmployeeDto implements Serializable {
 
     private String name;
 
-    private TimeDto timeRequired;
+    private LocalTime timeRequired;
 
-    private TimeDto timeWorkedInFact;
+    private LocalTime timeWorkedInFact;
 
 }

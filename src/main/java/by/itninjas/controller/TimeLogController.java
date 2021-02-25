@@ -6,7 +6,6 @@ import by.itninjas.service.TimeLogService;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -27,13 +26,9 @@ public class TimeLogController {
     }
 
     @GetMapping("/{employeeId}")
-    public List<DayLogDto> getEmployeeLogs(
-        @PathVariable(name = "employeeId") int employeeId,
-        @RequestParam(defaultValue = "1") int page,
-        @RequestParam(defaultValue = "30") int size) {
-
+    public List<DayLogDto> getEmployeeLogs(@PathVariable(name = "employeeId") int employeeId) {
         return timeLogService
-            .getAllByEmployeeId(employeeId, PageRequest.of(page - 1, size))
+            .getAllByEmployeeId(employeeId)
             .stream()
             .map(TimeLogConverter::toDayLogDto)
             .collect(Collectors.toList());

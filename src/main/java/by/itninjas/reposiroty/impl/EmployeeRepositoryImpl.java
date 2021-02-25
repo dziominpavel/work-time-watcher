@@ -24,8 +24,7 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
             .orElse(null);
 
         if (employeeWithSuchName != null) {
-            employee.setId(employeeWithSuchName.getId());
-            STORAGE.put(employeeWithSuchName.getId(), employee);
+            STORAGE.put(employeeWithSuchName.getId(), employeeWithSuchName);
         } else {
             int maxId = STORAGE
                 .keySet()
