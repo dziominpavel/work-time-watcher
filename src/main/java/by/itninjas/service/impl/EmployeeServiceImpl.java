@@ -6,6 +6,8 @@ import by.itninjas.reposiroty.EmployeeRepository;
 import by.itninjas.service.EmployeeService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -19,8 +21,13 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public List<Employee> getAll() {
-        return employeeRepository.getAll();
+    public List<Employee> getAll(Pageable pageable) {
+        List<Employee> allEmployees = employeeRepository.getAll();
+
+        int firstIndex = (int) pageable.getOffset();
+        int endIndex = Math.min((firstIndex + pageable.getPageSize()), allEmployees.size());
+
+        return new PageImpl<>(allEmployees.subList(firstIndex, endIndex), pageable, allEmployees.size()).getContent();
     }
 
     @Override
