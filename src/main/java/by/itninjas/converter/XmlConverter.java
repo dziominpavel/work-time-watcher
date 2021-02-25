@@ -123,7 +123,6 @@ public class XmlConverter {
                 temp = null;
             }
         }
-
         return difference;
     }
 
