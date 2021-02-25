@@ -7,17 +7,15 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class EmployeeDto implements Serializable {
+public class TimeDto implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 1L;
 
-    private String id;
+    private int hour;
 
-    private String name;
+    private int minute;
 
-    private TimeDto timeRequired;
-
-    private TimeDto timeWorkedInFact;
+    private int second;
 
 }

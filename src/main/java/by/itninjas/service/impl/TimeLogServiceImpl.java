@@ -4,6 +4,7 @@ import static java.time.LocalTime.MIDNIGHT;
 import static org.apache.commons.lang3.StringUtils.EMPTY;
 
 import by.itninjas.domain.entity.DayLog;
+import by.itninjas.domain.entity.Employee;
 import by.itninjas.domain.entity.InOutDayLog;
 import by.itninjas.domain.enums.InOutType;
 import by.itninjas.domain.xml.Row;
@@ -19,6 +20,8 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -43,10 +46,15 @@ public class TimeLogServiceImpl implements TimeLogService {
     }
 
     @Override
-    public List<DayLog> getAllByEmployeeId(int employeeId) {
-        return employeeService
-            .getById(employeeId)
-            .getDayLogs();
+    public List<DayLog> getAllByEmployeeId(int employeeId, Pageable pageable) {
+        Employee employee = employeeService
+            .getById(employeeId);
+        List<DayLog> dayLogs = employee.getDayLogs();
+
+        int firstIndex = (int) pageable.getOffset();
+        int endIndex = Math.min((firstIndex + pageable.getPageSize()), dayLogs.size());
+
+        return new PageImpl<>(dayLogs.subList(firstIndex, endIndex), pageable, dayLogs.size()).getContent();
     }
 
     @Override
@@ -138,7 +146,11 @@ public class TimeLogServiceImpl implements TimeLogService {
         LocalTime presence = calcDifference(inOutDayLogs, InOutType.IN, InOutType.OUT);
 
         if (lunchAbsence.compareTo(MIDNIGHT) == 0) {
-            return presence.minusHours(1);
+            if (presence.compareTo(LocalTime.of(1, 1)) > 0) {
+                return presence.minusHours(1);
+            } else {
+                return LocalTime.of(0, 0);
+            }
         } else if (lunchAbsence.compareTo(LUNCH_DURATION) >= 0) {
             return presence;
         } else {
