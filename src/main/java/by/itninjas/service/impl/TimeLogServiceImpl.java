@@ -11,6 +11,7 @@ import by.itninjas.domain.xml.Row;
 import by.itninjas.domain.xml.RowCollection;
 import by.itninjas.service.EmployeeService;
 import by.itninjas.service.TimeLogService;
+import by.itninjas.service.util.WorkingCalendar;
 import by.itninjas.service.util.XmlReader;
 import java.io.IOException;
 import java.time.LocalDate;
@@ -108,7 +109,7 @@ public class TimeLogServiceImpl implements TimeLogService {
                         .sorted(Comparator.comparing(InOutDayLog::getTime))
                         .collect(Collectors.toList())
                 );
-                dayLog.setWorkedInPlan(LocalTime.of(8, 0, 0));
+                dayLog.setWorkedInPlan(WorkingCalendar.getTimeByDate(dateAsString));
                 dayLog.setWorkedInFact(calcFactWorked(dayLog.getInOutDayLogs()));
                 return dayLog;
             })
